@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: Network_Security
+Version: 0.0.0.1
+Author: Pratham Chauhan
+Author-email: pratham15051999@gmail.com
+Requires-Dist: python-dotenv
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pymongo
+Requires-Dist: certifi
+Requires-Dist: pymongo[srv]==4.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
