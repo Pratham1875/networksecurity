@@ -27,6 +27,8 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
+import dagshub
+dagshub.init(repo_owner='Pratham1875', repo_name='networksecurity', mlflow=True)
 
 
 class ModelTrainer:
@@ -142,10 +144,14 @@ class ModelTrainer:
                 exist_ok=True,
             )
 
+            
+
+
             save_object(
                 self.model_trainer_config.train_model_file_path,
                 obj=best_model,
             )
+            save_object("final_model/model.pkl",best_model)
 
             model_trainer_artifact = ModelTrainerArtifact(
                 trained_model_file_path=(
@@ -196,6 +202,7 @@ class ModelTrainer:
                 x_test,
                 y_test,
             )
+            model_trainer_artifact=self.train_model(x_train,y_train,x_test,y_test)
 
             return model_trainer_artifact
 
